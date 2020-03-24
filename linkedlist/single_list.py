@@ -1,6 +1,6 @@
 # 单链表节点
 class Node(object):
-    def __init__(self, value, next=None):
+    def __init__(self, value=None, next=None):
         self.value = value
         self.next = next
 
@@ -21,7 +21,7 @@ class LinkedList(object):
         """
         self.maxsize = maxsize
         self.root = Node()
-        self.tailnode = Node
+        self.tailnode = None
         self.length = 0
 
     def __len__(self):
