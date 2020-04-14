@@ -79,15 +79,15 @@ class DoubleLinkedList(object):
         """
         if self.root.next is None:
             raise Exception('双向链表为空')
-        if node.next is None:
+        if node is self.tailnode:
+            prevnode = node.prev
+            prevnode.next = None
+            self.tailnode = prevnode
+        else:
             prevnode = node.prev
             nextnode = node.next
             prevnode.next = nextnode
             nextnode.prev = prevnode
-        else:
-            prevnode = node.prev
-            prevnode.next = None
-            self.tailnode = prevnode
 
     def iter_node_reverse(self):
         """
